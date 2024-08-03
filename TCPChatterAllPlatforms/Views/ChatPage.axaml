@@ -1,0 +1,19 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:TCPChatterAllPlatforms.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+			 x:Class="TCPChatterAllPlatforms.Views.ChatPage">
+
+	<StackPanel>
+		<ScrollViewer>
+
+		</ScrollViewer>
+		<TextBox Name="MessageInput" Height="30"/>
+		<Button Name="SendButton" Content="Send" Height="30" Click="SendButton_Click"/>
+		<TextBox Name="HostTB"/>
+		<Button Name="Ensure" Click="Button_Click" Content="Ensure"/>
+		<TextBlock>说明：傻逼微软</TextBlock>
+	</StackPanel>
+</UserControl>

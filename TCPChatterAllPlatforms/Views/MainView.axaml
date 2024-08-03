@@ -1,0 +1,28 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:TCPChatterAllPlatforms.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="TCPChatterAllPlatforms.Views.MainView"
+			 xmlns:views="clr-namespace:TCPChatterAllPlatforms.Views"
+			 x:DataType="vm:MainViewModel">
+  <Design.DataContext>
+    <!-- This only sets the DataContext for the previewer in an IDE,
+         to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+    <vm:MainViewModel />
+  </Design.DataContext>
+	<Grid RowDefinitions="30,*" >
+		<Grid Grid.Row="1" PointerPressed="UserControl_PointerPressed" PointerReleased="UserControl_PointerReleased"
+			 Background="Transparent"
+>
+			<Border Name="MainBorder" Grid.Row="1" />
+		</Grid>
+		<Grid RowDefinitions="30,*">
+			<Button Content="三" Click="Button_Click"/>
+		</Grid>
+		<Rectangle Fill="#95000000" PointerPressed="Rectangle_PointerPressed" 
+				   Grid.RowSpan="2" x:Name="black" IsVisible="False"/>
+		<Canvas x:Name="flyout" IsVisible="False"/>
+	</Grid>
+</UserControl>

@@ -1,0 +1,23 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:TCPChatterAllPlatforms.ViewModels"
+             mc:Ignorable="d" d:DesignHeight="450"
+			 Background="White" Width="300"
+			 PointerPressed="UserControl_PointerPressed" PointerReleased="UserControl_PointerReleased"
+			 x:Class="TCPChatterAllPlatforms.Views.SettingNavigateFlyout">
+<Grid RowDefinitions="*,50">
+	<StackPanel>
+        
+	</StackPanel>
+	<Grid Background="Transparent" Grid.Row="1" PointerPressed="Grid_PointerPressed_1">
+		<Canvas>
+			<Path Canvas.Left="-90" Canvas.Top="11"
+				Data="M113.5 8.56803C110.289 8.56803 107.686 11.2102 107.686 14.4696 107.686 17.7289 110.289 20.3711 113.5 20.3711 116.711 20.3711 119.314 17.7289 119.314 14.4696 119.314 11.2102 116.711 8.56803 113.5 8.56803ZM104.397 0.500053 122.604 0.500053 129.5 14.5001 122.604 28.5001 104.397 28.5001 97.5001 14.5001Z" Fill="Black"/>
+		</Canvas>
+		<TextBlock Text="       设置" FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+		<Rectangle Height="1" VerticalAlignment="Top" HorizontalAlignment="Stretch" Fill="Black"/>
+	</Grid>
+</Grid>
+</UserControl>
