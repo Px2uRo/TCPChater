@@ -144,7 +144,15 @@ namespace TCPChatterAllPlatforms
             var view = MainView.flyout.Children[0];
             var db = 0 - MainView.Bounds.Width * (2d / 3d);
             _hideBgrdAnim.RunAsync(MainView.black);
-            _hideFlyoutAnim(db).RunAsync(view);
+            var ani = _hideFlyoutAnim(db).RunAsync(view);
+            new Thread(() =>
+            {
+                Thread.Sleep(320);
+                Dispatcher.UIThread.Invoke(new Action(() =>
+                {
+                    MainView.flyout.IsVisible = false;
+                }));
+            }).Start();
         }
 
         private static Animation _hideFlyoutAnim(double db) => new Animation()

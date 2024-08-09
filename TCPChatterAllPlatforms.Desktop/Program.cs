@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading;
 
 using Avalonia;
+using TCPChatterAllPlatforms.MyNet;
 
 namespace TCPChatterAllPlatforms.Desktop;
 
@@ -31,11 +32,13 @@ class Program
 
     // Avalonia configuration, don't remove; also used by visual designer.
     public static AppBuilder BuildAvaloniaApp()
-        => AppBuilder.Configure<App>()
+    {
+        App.IPProvdider = new WindowsIPProvider();
+        return AppBuilder.Configure<App>()
             .UsePlatformDetect()
             .WithInterFont()
             .LogToTrace();
-
+    }
 
     private static void SilenceConsole()
     {

@@ -16,6 +16,7 @@ public class MainActivity : AvaloniaMainActivity<App>
 {
     protected override AppBuilder CustomizeAppBuilder(AppBuilder builder)
     {
+        App.IPProvdider = new AndroidIPProvider(this);
         return base.CustomizeAppBuilder(builder)
             .WithInterFont();
     }

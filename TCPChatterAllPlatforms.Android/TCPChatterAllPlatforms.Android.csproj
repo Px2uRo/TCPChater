@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
     <ApplicationId>io.gitee.pinkcat.tcpchat</ApplicationId>
     <ApplicationVersion>2</ApplicationVersion>
-    <ApplicationDisplayVersion>2.0-dev2</ApplicationDisplayVersion>
+    <ApplicationDisplayVersion>2.0-dev3</ApplicationDisplayVersion>
     <AndroidPackageFormat>apk</AndroidPackageFormat>
     <AndroidEnableProfiledAot>False</AndroidEnableProfiledAot>
     <Platforms>AnyCPU;ARM64</Platforms>

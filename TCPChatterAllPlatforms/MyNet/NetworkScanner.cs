@@ -12,25 +12,11 @@ namespace TCPChatterAllPlatforms
 {
     public class NetworkScanner
     {
-        public static IEnumerable<string> ScanNetwork()
-        {
-            IEnumerable<string> baseips = null;
-            if (App.Current.ApplicationLifetime is ISingleViewApplicationLifetime)
-            {
-                baseips = new AndroidIPProvider().GetIPs();
-            }
-            else
-            {
-                if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
-                {
-                    baseips = new WindowsIPProvider().GetIPs();
-                }
-                else
-                {
+        public static IEnumerable<string> ScanNetCards()=>App.IPProvdider.GetIPs();
 
-                    baseips = new LinuxIPProvider().GetIPs();
-                }
-            }
+        public IEnumerable<string> GetAvaliableServers(IEnumerable<string> baseips)
+        {
+
             var ret = new List<string>();
             foreach (var item in baseips)
             {

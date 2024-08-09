@@ -4,9 +4,32 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:TCPChatterAllPlatforms.ViewModels"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+			 Background="Transparent"
+			 x:DataType="vm:SettingsViewModel"
 			 x:Class="TCPChatterAllPlatforms.Views.SettingView">
 
 	<StackPanel>
-        <TextBox Text="UnderConstraction" />
+        <TextBlock FontSize="24" FontWeight="Bold" Text="  IP 检索列表"/>
+		<ListBox ItemsSource="{Binding RecordedThisTime}">
+			<ListBox.ItemTemplate>
+				<DataTemplate>
+					<Grid>
+						<TextBlock Text="{Binding IPBase}" FontWeight="Bold" FontSize="14" HorizontalAlignment="Left"/>
+						<Button Content="加入黑名单" HorizontalAlignment="Right" Command="{Binding AddToBlacklist}" CommandParameter="{Binding}" />
+					</Grid>
+				</DataTemplate>
+			</ListBox.ItemTemplate>
+		</ListBox>
+		<TextBlock FontSize="24" FontWeight="Bold" Text="  IP 段黑名单"/>
+		<ListBox ItemsSource="{Binding IPBlackCollection}">
+			<ListBox.ItemTemplate>
+				<DataTemplate>
+					<Grid>
+						<TextBlock Text="{Binding IPBase}" FontWeight="Bold" FontSize="14" HorizontalAlignment="Left"/>
+						<Button Content="移除黑名单" HorizontalAlignment="Right" Command="{Binding RemoveFromBlacklist}" CommandParameter="{Binding}" />
+					</Grid>
+				</DataTemplate>
+			</ListBox.ItemTemplate>
+		</ListBox>
 	</StackPanel>
 </UserControl>

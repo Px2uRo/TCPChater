@@ -7,7 +7,7 @@ using Avalonia.Markup.Xaml;
 
 using Meadow;
 using Meadow.Pinouts;
-
+using TCPChatterAllPlatforms.MyNet;
 using TCPChatterAllPlatforms.ViewModels;
 using TCPChatterAllPlatforms.Views;
 
@@ -15,7 +15,7 @@ namespace TCPChatterAllPlatforms;
 
 public partial class App : AvaloniaMeadowApplication<Linux<RaspberryPi>>
 {
-
+    public static IIPProvider IPProvdider { get; set; }
     public override void Initialize()
     {
         AvaloniaXamlLoader.Load(this);
@@ -60,7 +60,7 @@ public partial class App : AvaloniaMeadowApplication<Linux<RaspberryPi>>
                 DataContext = new MainViewModel()
             };
         }
-
+        SettingView.View.Scan();
         base.OnFrameworkInitializationCompleted();
     }
 

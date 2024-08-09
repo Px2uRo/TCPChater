@@ -19,6 +19,7 @@ public partial class SettingNavigateFlyout : UserControl,IRecordPointer
 
     public static SettingNavigateFlyout Flyout { get;set; } = new SettingNavigateFlyout();
     public Point _startPoint { get; set ; }
+    public bool _pressed { get ; set; }
 
     public SettingNavigateFlyout()
     {
@@ -67,6 +68,7 @@ public partial class SettingNavigateFlyout : UserControl,IRecordPointer
 
 public interface IRecordPointer
 {
+    public bool _pressed { get; set; }
     public Point _startPoint { get; set; }
     public void UserControl_PointerPressed(object? sender, Avalonia.Input.PointerPressedEventArgs e);
     public void UserControl_PointerReleased(object? sender, Avalonia.Input.PointerReleasedEventArgs e);

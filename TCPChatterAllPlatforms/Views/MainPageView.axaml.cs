@@ -10,10 +10,12 @@ using TCPChatterAllPlatforms.MyNet;
 
 namespace TCPChatterAllPlatforms.Views;
 
-public partial class ConnectPage : UserControl
+public partial class MainPageView : UserControl
 
 {
-    public ConnectPage()
+    internal static MainPageView View = new();
+
+    public MainPageView()
     {
         InitializeComponent();
     }

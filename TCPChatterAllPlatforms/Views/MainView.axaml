@@ -14,9 +14,8 @@
   </Design.DataContext>
 	<Grid RowDefinitions="30,*" >
 		<Grid Grid.Row="1" PointerPressed="UserControl_PointerPressed" PointerReleased="UserControl_PointerReleased"
-			 Background="Transparent"
->
-			<Border Name="MainBorder" Grid.Row="1" />
+			 Background="Transparent">
+			<Border Name="MainBorder" Grid.Row="1"/>
 		</Grid>
 		<Grid RowDefinitions="30,*">
 			<Button Content="三" Click="Button_Click"/>

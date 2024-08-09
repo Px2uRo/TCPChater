@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -38,13 +39,6 @@ namespace TCPChatterAllPlatforms.MyNet
         }
     }
 
-    public class AndroidIPProvider : IIPProvider
-    {
-        public IEnumerable<string> GetIPs()
-        {
-            throw new NotImplementedException();
-        }
-    }
 
     public class LinuxIPProvider : IIPProvider
     {

@@ -21,9 +21,13 @@
     <PackageReference Include="Meadow.Foundation" Version="1.2" />
     <PackageReference Include="Meadow.Linux" Version="1.2" />
     <PackageReference Include="Meadow.Windows" Version="1.2" />
+    <PackageReference Include="Microsoft.Maui.Essentials" Version="8.0.71" />
   </ItemGroup>
 
   <ItemGroup>
+    <AvaloniaXaml Update="Views\MainPageView.axaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </AvaloniaXaml>
     <AvaloniaXaml Update="Views\SettingView.axaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </AvaloniaXaml>
@@ -39,6 +43,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\MainPageView.axaml.cs">
+      <DependentUpon>MainPageView.axaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\SettingView.axaml.cs">
       <DependentUpon>SettingView.axaml</DependentUpon>
     </Compile>
